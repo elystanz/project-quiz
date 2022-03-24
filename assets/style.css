@@ -9,6 +9,12 @@
     flex-wrap: wrap;
     flex-direction: column;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 100px;
+}
+
+h1 {
+    max-width: 500px;
+    text-align: center;
 }
 
 .ghibli {
@@ -16,11 +22,11 @@
     font-weight: bolder;
 }
 
-
 .button {
     background-color: #a26cba;
     border-radius: 5px;
     border-color: #a33636;
+    font-style: italic;
 }
 
 
