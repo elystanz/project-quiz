@@ -1,0 +1,26 @@
+* {
+    background-color: #d9fbff;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.ghibli {
+    color: #a26cba;
+    font-weight: bolder;
+}
+
+
+.button {
+    background-color: #a26cba;
+    border-radius: 5px;
+    border-color: #a33636;
+}
+
+
