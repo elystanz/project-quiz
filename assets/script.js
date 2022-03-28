@@ -1,8 +1,15 @@
-var startButton = document.getElementById("start");
-startButton.addEventListener("click", startGame);
+var startButton = document.getElementById("start-btn")
+var questionContainer = document.getElementById("question-container")
+var startTitle = document.getElementById("start-title")
+
+startButton.addEventListener("click", startGame)
 
 function startGame() {
-    console.log("Game Started");
+    console.log("Started");
+    startButton.classList.add("hide");
+    startTitle.classList.add("hide");
+    questionContainer.classList.remove("hide");
+    
 }
 
 // function setNextQuestion() {
