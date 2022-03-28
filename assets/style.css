@@ -53,15 +53,11 @@ body {
 
 
 .kiki {
-    /* display: flex;
-    max-width: 100%;
-    max-height: auto;
-    justify-content: flex-end; */
-    position: absolute;
+    position: fixed;
     right: 0px;
     bottom: 0px;
     max-width: 100%;
-    max-height: auto;
+    max-height: 100%;
     background-color: transparent;
 }
 
@@ -71,4 +67,10 @@ img {
 
 .hide {
     display: none;
+}
+
+@media screen and (max-width: 950px), screen and (max-height: 880px){
+    .kiki {
+        display: none;
+    }
 }
