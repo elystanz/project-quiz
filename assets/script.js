@@ -1,3 +1,20 @@
+var startButton = document.getElementById("start");
+
+startButton.addEventListener("click", startGame);
+
+function startGame() {
+    console.log("Game Started");
+}
+
+// function setNextQuestion() {
+
+// }
+
+// function selectAnswer() {
+
+// }
+
+
 // have questions stored in an array
 // use radio buttons to input numerical information 1-5
 // have a "next" button once question is answered
