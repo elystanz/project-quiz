@@ -26,6 +26,7 @@ body {
     font-size: 60px;
 }
 
+
 .ghibli {
     color: #a26cba;
     font-weight: bolder;
@@ -45,11 +46,18 @@ body {
     border-color: #d9fbff;
 }
 
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
+.btn-group {
+    gap: 20px;
+    margin: 0;
+    font-size: 0px;
+}
+
+
+#least-most {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    gap: 180px;
 }
 
 

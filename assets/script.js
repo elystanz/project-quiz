@@ -1,6 +1,7 @@
 var startButton = document.getElementById("start-btn")
 var questionContainer = document.getElementById("question-container")
 var startTitle = document.getElementById("start-title")
+var nextButton = document.getElementById("next-btn")
 
 startButton.addEventListener("click", startGame)
 
@@ -9,8 +10,10 @@ function startGame() {
     startButton.classList.add("hide");
     startTitle.classList.add("hide");
     questionContainer.classList.remove("hide");
+    nextButton.classList.remove("hide");
     
 }
+
 
 // function setNextQuestion() {
 
