@@ -11,35 +11,43 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="card-body">
             <div id="question-container" class="hide">
-
                 <div id="question">
                     <h1>Question 1</h1>
                 </div>
 
                 <div id="scale">
                     <div id="least-most">
-                        <p>least likely</p>
-                        <p>most likely</p>
+                        <p>not likely</p>
+                        <p>very likely</p>
                     </div>
                     <div id="answer-button" class="btn-group" role="group">
-                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="one">1</button>
-                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="two">2</button>
-                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="three">3</button>
-                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="four">4</button>
-                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="five">5</button>
+                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="onePoint">1</button>
+                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="twoPoint">2</button>
+                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="threePoint">3</button>
+                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="fourPoint">4</button>
+                        <input type="radio" class="form-check-input text-white fs-5" name="radioNoLabel" id="fivePoint">5</button>
                     </div>
                 </div>
-
             </div>
+
+            <div class="dog">
+                <img id="image">
+            </div>
+
+            <div class="ghibli-name">
+                <h1 id="names"></h1>
+            </div>
+
             <div class="text-center" id="start-title">
-                <h1>What cat would your <br><em class="ghibli">Studio Ghibli</em><br> character have?</h1>
+                <h1>What dog would your <br><em class="ghibli">Studio Ghibli</em><br> character have?</h1>
             </div>
             <div class="controls">
                 <button class="button start-btn text-white" type="button" id="start-btn">Start!</button>
                 <button class="button next-btn text-white hide" type="button" id="next-btn">Next</button>
             </div>
+            
         </div>
         <div class="kiki">
             <img src="images/kiki.png">
