@@ -1,3 +1,4 @@
+// declare all global variables
 var startButton = document.getElementById("start-btn")
 var questionContainer = document.getElementById("question-container")
 var startTitle = document.getElementById("start-title")
@@ -8,10 +9,22 @@ var answerThree = document.getElementById("threePoint")
 var answerFour = document.getElementById("fourPoint")
 var answerFive = document.getElementById("fivePoint")
 var leastMost = document.getElementById("scale")
+var finalQuestion = document.getElementById("question")
 
+// hide the save results button
+var saveResults = document.getElementById("save")
+saveResults.classList.add("hide");
 
+// create fetch button, hide it, and style the button
 var fetchButton = document.createElement("button")
 fetchButton.classList.add("hide")
+
+fetchButton.className = "button text-white";
+fetchButton.textContent = "Results!";
+fetchButton.style.justifyContent = "center";
+fetchButton.style.margin = "45px";
+
+// contain questions within a string
 var questions = [['How likely are your parents able to become pigs'],
 ['How likely are you to become old and travel with a prince to get your beauty back'],
 ['How likely are you able to befriend a mermaid princess'],
@@ -21,6 +34,7 @@ var questions = [['How likely are your parents able to become pigs'],
 var score = 0
 var questionNo = 1
 
+// add eventListeners to radio buttons
 startButton.addEventListener("click", setUp)
 nextButton.addEventListener("click", setNextQuestion)
 answerOne.addEventListener("click", addOnepoint)
@@ -29,11 +43,8 @@ answerThree.addEventListener("click", addThreepoint)
 answerFour.addEventListener("click", addFourpoint)
 answerFive.addEventListener("click", addFivepoint)
 
-fetchButton.className = "button text-white";
-fetchButton.textContent = "Results!";
-fetchButton.style.justifyContent = "center";
-fetchButton.style.margin = "45px";
 
+// start game function
 function startGame() {
     console.log("Started");
     startButton.classList.add("hide");
@@ -41,34 +52,32 @@ function startGame() {
     questionContainer.classList.remove("hide");
     
 }
-//function fetchButton(){
-   // var fetchButton = document.createElement("button")
-//}
+
+// loop through question array until finished, then present the results
 function setUp(){
     startButton.classList.add("hide");
     startTitle.classList.add("hide");
     questionContainer.classList.remove("hide");
-    // nextButton.classList.remove("hide");
     if (questions.length != 0){
         document.getElementById("question").innerHTML = questions[0][0];
+        event.preventDefault();
     } else {
-        var finalQuestion = document.getElementById("question")
-
         finalQuestion.innerHTML = "Get your character and their dog!";
 
         document.getElementById("answer-button").remove();
         leastMost.classList.add("hide");
         fetchButton.classList.remove("hide");
         document.getElementById("question").append(fetchButton)
-}
+      }
     }
 
-
+// allows loop to restart at beginning of setUp function, until array is exhausted
  function setNextQuestion() {
     questions.shift();
     setUp();
 }
 
+// begin point add system
 function addOnepoint(){
     score = score + 1
     setNextQuestion()
@@ -94,8 +103,8 @@ function addFivepoint(){
     setNextQuestion()
 }
 
+// declare dog image variable and fetch image data from the API
 var image = document.getElementById("image")
-
 fetchButton.addEventListener("click", function() {
   fetch("https://dog.ceo/api/breeds/image/random")
     .then(res => res.json())
@@ -106,10 +115,10 @@ fetchButton.addEventListener("click", function() {
     .catch(err=>console.log(err))
 })
 
-
-
+// declare name variable and fetch name data from the API
+var ghibliName = document.getElementById("names")
 fetchButton.addEventListener("click", function() {
-fetch("https://ghibliapi.herokuapp.com/people?random")
+fetch("https://ghibliapi.herokuapp.com/people")
   .then(function (response) {
     return response.json();
   })
@@ -118,78 +127,27 @@ fetch("https://ghibliapi.herokuapp.com/people?random")
     for (var i = 0; i < data.length; i++) {
       // console.log(data[i].url);
       console.log(data[i].name); 
-      
+      ghibliName.src = data[i].name;
     }
   })
 })
 
+// begin result save submission to localStorage
+fetchButton.addEventListener("click", function() {
+  fetchButton.classList.add("hide");
+  saveResults.classList.remove("hide");
+  finalQuestion.textContent = "Save Your Results!";
+  document.getElementById("question").append(saveResults);
+})
 
+saveResults.addEventListener("click", function(event) {
+  var submission = document.getElementById("save");
+  console.log(submission.toString());
+
+  event.preventDefault();
+})
+
+
+// ALTERNATIVE APIs
 // https://cataas.com/cat/cat
-// 
 // https://api.thecatapi.com/v1/images/search?limit=1&size=full
-
-// function getApi() {
-
-//     // startTitle.classList.remove("hide");
-//     nextButton.classList.add('hide');
-//     var requestUrl = 'https://dog.ceo/api/breeds/image/random';
-//     console.log(requestUrl);
-
-//     fetch(requestUrl)
-//       .then(function(response) {
-//         return response.url;
-//       })
-//       .then(function(data) {
-//         for (var i = 0; i < score; i++) {
-//           var listItem = document.createElement('img');
-//           ('img').src = requestUrl;
-//           listItem.innerHTML = data[i].url;
-//           startTitle.appendChild(listItem)
-//           nextButton.classList.add('hide');
-//           leastMost.classList.add('hide');
-//         }
-//       });
-    
-//   }
-
-  // fetchButton.addEventListener('click', getApi);
-
-
-
-
-
-
-
-// var startButton = document.getElementById("start-btn")
-// var questionContainer = document.getElementById("question-container")
-// var startTitle = document.getElementById("start-title")
-// var nextButton = document.getElementById("next-btn")
-
-// startButton.addEventListener("click", startGame)
-
-// function startGame() {
-//     console.log("Started");
-//     startButton.classList.add("hide");
-//     startTitle.classList.add("hide");
-//     questionContainer.classList.remove("hide");
-//     nextButton.classList.remove("hide");
-    
-// }
-
-
-// // function setNextQuestion() {
-
-// // }
-
-// // function selectAnswer() {
-
-// // }
-
-
-// have questions stored in an array
-// use radio buttons to input numerical information 1-5
-// have a "next" button once question is answered
-// once all questions have been cycled through, have a "finish" button to provide results
-// display results
-// have input field for name that will allow results to be saved to local storage
-// have a button to access a new page that lists result

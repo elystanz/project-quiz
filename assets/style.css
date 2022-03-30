@@ -1,6 +1,9 @@
 * {
-    background-color: #d9fbff;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+    background-color: #d9fbff;
 }
 
 body {
@@ -37,7 +40,8 @@ p {
 
 #question {
     background-color: transparent;
-    padding-top: 50px
+    padding-top: 50px;
+    margin: 0 5px 0 5px;
 }
 
 .ghibli {
@@ -71,6 +75,15 @@ input[type="radio"]{
     transform: scale(1.5);
 }
 
+input [type="text"] {
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.input-group {
+    margin: auto;
+}
+
 #least-most {
     display: flex;
     justify-content: space-between;
@@ -98,9 +111,22 @@ input[type="radio"]{
 img {
     background-color: transparent;
     border-radius: 5px;
+    box-shadow: black 4px 4px 7px;
 }
 
 .dog {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    object-fit: cover;
+    overflow: hidden;
+    
+}
+
+.ghibli-names {
     display: flex;
     justify-content: center;
     margin: 40px;
@@ -110,9 +136,11 @@ img {
     overflow: hidden;
 }
 
+
 .hide {
     display: none;
 }
+
 
 @media screen and (max-width: 950px), screen and (max-height: 880px){
     .kiki {
