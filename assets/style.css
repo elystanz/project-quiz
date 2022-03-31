@@ -105,14 +105,14 @@ img {
     box-shadow: black 4px 4px 7px;
 }
 
-.kiki {
+/* .kiki {
     position: fixed;
     left: 0px;
     bottom: 0px;
     max-width: 50%;
     max-height: 50%;
     background-color: transparent;
-}
+} */
 
 .dog {
     display: flex;
