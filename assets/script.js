@@ -123,14 +123,15 @@ fetch("https://ghibliapi.herokuapp.com/people")
     return response.json();
   })
   .then(function (data) {
-    // console.log('names');
-    for (var i = 0; i < data.length; i++) {
-      // console.log(data[i].url);
-      console.log(data[i].name); 
-      ghibliName.src = data[i].name;
-    }
+    var randomNum = Math.floor(Math.random() * score)
+    ghibliName = data[randomNum].name;
+    console.log(ghibliName);
+    document.getElementById("names").textContent = ghibliName;
   })
 })
+
+ghibliName.className = "ghibli";
+ghibliName.classList.justifyContent = "center";
 
 // begin result save submission to localStorage
 fetchButton.addEventListener("click", function() {
@@ -138,13 +139,6 @@ fetchButton.addEventListener("click", function() {
   saveResults.classList.remove("hide");
   finalQuestion.textContent = "Save Your Results!";
   document.getElementById("question").append(saveResults);
-})
-
-saveResults.addEventListener("click", function(event) {
-  var submission = document.getElementById("save");
-  console.log(submission.toString());
-
-  event.preventDefault();
 })
 
 function saveData(){
@@ -157,7 +151,7 @@ function getData(){
     if (localStorage.getItem('data') == null){
         localStorage.setItem('data', '');}
     var saver = JSON.parse(localStorage.getItem('data'))
-    console.log(saver)
+    // console.log(saver)
     document.getElementById('name-save').innerHTML= saver
 }
 
