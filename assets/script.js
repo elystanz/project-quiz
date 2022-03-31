@@ -147,6 +147,20 @@ saveResults.addEventListener("click", function(event) {
   event.preventDefault();
 })
 
+function saveData(){
+  var save_button = document.getElementById("name-save").value
+  var save_Button = JSON.stringify(save_button)
+  localStorage.setItem("data",save_Button)
+}
+
+function getData(){
+    if (localStorage.getItem('data') == null){
+        localStorage.setItem('data', '');}
+    var saver = JSON.parse(localStorage.getItem('data'))
+    console.log(saver)
+    document.getElementById('name-save').innerHTML= saver
+}
+
 
 // ALTERNATIVE APIs
 // https://cataas.com/cat/cat
