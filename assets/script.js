@@ -131,7 +131,6 @@ fetch("https://ghibliapi.herokuapp.com/people")
 })
 
 ghibliName.className = "ghibli";
-ghibliName.classList.justifyContent = "center";
 
 // begin result save submission to localStorage
 fetchButton.addEventListener("click", function() {

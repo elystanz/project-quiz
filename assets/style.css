@@ -99,6 +99,12 @@ input [type="text"] {
     background-color: transparent;
 }
 
+img {
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: black 4px 4px 7px;
+}
+
 .kiki {
     position: fixed;
     left: 0px;
@@ -106,12 +112,6 @@ input [type="text"] {
     max-width: 50%;
     max-height: 50%;
     background-color: transparent;
-}
-
-img {
-    background-color: transparent;
-    border-radius: 5px;
-    box-shadow: black 4px 4px 7px;
 }
 
 .dog {
