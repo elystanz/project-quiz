@@ -19,17 +19,17 @@ saveResults.classList.add("hide");
 var fetchButton = document.createElement("button")
 fetchButton.classList.add("hide")
 
-fetchButton.className = "button text-white";
+fetchButton.className = "button";
 fetchButton.textContent = "Results!";
 fetchButton.style.justifyContent = "center";
 fetchButton.style.margin = "45px";
 
 // contain questions within a string
-var questions = [['How likely are your parents able to become pigs'],
-['How likely are you to become old and travel with a prince to get your beauty back'],
-['How likely are you able to befriend a mermaid princess'],
-['How likely are you able to play with spirits in your home'],
-['How confident were you in getting these references']]
+var questions = [['How likely are your parents able to become pigs?'],
+['Travel with a prince to get your beauty back after turning old?'],
+['How likely are you to befriend a mermaid princess?'],
+['How likely are you to play with spirits in your home?'],
+['How likely are you to wait in the rain for a bus?']]
 
 var score = 0
 var questionNo = 1
@@ -144,6 +144,7 @@ function saveData(){
   var save_button = document.getElementById("name-save").value
   var save_Button = JSON.stringify(save_button)
   localStorage.setItem("data",save_Button)
+  event.preventDefault();
 }
 
 function getData(){

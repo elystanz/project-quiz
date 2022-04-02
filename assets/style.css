@@ -1,5 +1,6 @@
-* {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+*,
+h1 {
+    font-family: 'Times New Roman', Times, serif;
 }
 
 html {
@@ -18,30 +19,30 @@ p {
     background-color: transparent;
 }
 
-.card-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 70px;
+.card {
+    background-color: transparent;
+    border: none;
+    
     
 }
 
 #question-container,
 .start-screen {
+    margin-top: 50px;
+    margin-bottom: 60px;
     max-width: 600px;
     text-align: center;
     font-size: 40px;
     background-color: #a25967;
     border-radius: 5px;
     box-shadow: black 8px 8px 15px;
+    
 }
 
 #question {
     background-color: transparent;
     padding-top: 50px;
-    margin: 0 5px 0 5px;
+    margin: 0px 5px 0 5px;
 }
 
 .ghibli {
@@ -56,32 +57,42 @@ p {
     border-width: 5px;
     font-style: italic;
     font-size: 30px;
+    padding: 10px;
 
 }
 
 .button:hover {
-    border-color: #d9fbff;
+    border-color: #ca6f6f;
+    border-radius: 5px;
 }
 
-.btn-group {
-    gap: 40px;
-    margin: 0px;
+.save-btn {
+    background-color: #a26cba;
+    font-style: italic;
+    font-size: 20px;
+    color: white;
+    padding: 8px;
+
+}
+
+.save-btn:hover {
+    background-color: #caa8d8;
+}
+
+.button-group {
     font-size: 0px;
     background-color: transparent;
+    margin-left: 50px;
     
 }
 
 input[type="radio"]{
-    transform: scale(1.5);
-}
-
-input [type="text"] {
-    border-radius: 5px;
-    background-color: transparent;
+    transform: scale(2);
 }
 
 .input-group {
     margin: auto;
+    padding: 20px;
 }
 
 #least-most {
@@ -105,45 +116,24 @@ img {
     box-shadow: black 4px 4px 7px;
 }
 
-/* .kiki {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    max-width: 50%;
-    max-height: 50%;
-    background-color: transparent;
-} */
-
 .dog {
-    display: flex;
-    justify-content: center;
     margin: 40px;
-    width: 600px;
-    height: auto;
     padding: 20px;
     object-fit: cover;
     overflow: hidden;
     
 }
 
-.ghibli-names {
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-    width: 600px;
-    height: auto;
-    object-fit: cover;
-    overflow: hidden;
+.result-container {
+    height: 200px;
 }
-
 
 .hide {
     display: none;
 }
 
+@media screen and (max-width: 39.9375em) {}
 
-@media screen and (max-width: 950px), screen and (max-height: 880px){
-    .kiki {
-        display: none;
-    }
-}
+@media screen and (min-width: 40em) {}
+
+@media screen and (min-width: 64em) {}
