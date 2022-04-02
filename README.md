@@ -1,5 +1,17 @@
 # Studio Ghibli & Dogs!
 
+## Description
+This quiz application presents users with a variety of questions to assess their compatibility with characters from iconic Studio Ghibli films, and pair those results with a dog that is most like your character. The quiz is meant to be fun, relatively pointless, and very educational on the coding end!
+
+## Functionality
+(insert gif here)
+
+## Support
+Please reach out with issues if you notice any bugs or have any suggestions when taking the quiz. Any and all feedback is appreciated!
+
+## Roadmap
+As we develop this application, more questions will be added to allow a more precise and accurate result
+
 # The JavaScript must
 - have questions stored in an array
 - use radio buttons to input numerical information 1-5
