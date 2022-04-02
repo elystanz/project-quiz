@@ -125,15 +125,32 @@ img {
 }
 
 .result-container {
-    height: 200px;
+    height: auto;
 }
 
 .hide {
     display: none;
 }
 
-@media screen and (max-width: 39.9375em) {}
+@media screen and (max-width: 39.9375em) {
+    #question-container,
+    .card {
+        display: block;
+        max-width: 100vw;
+        margin-top: 10px;
+    }
 
-@media screen and (min-width: 40em) {}
+    #question {
+        font-size: 30px;
+    }
 
-@media screen and (min-width: 64em) {}
+    .result-container {
+        height: auto;
+    }
+
+    .button {
+    border-width: 3px;
+    font-size: 20px;
+    padding: 5px;
+    }
+}
