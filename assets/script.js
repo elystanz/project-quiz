@@ -141,18 +141,32 @@ fetchButton.addEventListener("click", function() {
 })
 
 function saveData(){
+  array = ['']
   var save_button = document.getElementById("name-save").value
   var save_Button = JSON.stringify(save_button)
   localStorage.setItem("data",save_Button)
-  event.preventDefault();
+  var ghibliSave = JSON.stringify(ghibliName)
+  localStorage.setItem('dataTwo', ghibliSave)
+  var imageSave = JSON.stringify(image.src)
+  localStorage.setItem('dataThree', imageSave)
+  array.push(save_Button)
+  array.push(ghibliSave)
+  array.push(imageSave)
+  console.log(array)
 }
 
 function getData(){
-    if (localStorage.getItem('data') == null){
-        localStorage.setItem('data', '');}
-    var saver = JSON.parse(localStorage.getItem('data'))
-    // console.log(saver)
-    document.getElementById('name-save').innerHTML= saver
+  if (localStorage.getItem('data') === null){
+    localStorage.setItem('data', '');}
+  if (localStorage.getItem('dataTwo') === null){
+    localStorage.setItem('dataTwo', '');}
+  if (localStorage.getItem('dataTwo') === null){
+    localStorage.setItem('dataTwo', '');}
+  var saver = JSON.parse(localStorage.getItem('data'))
+  var ghiblisaved = JSON.parse(localStorage.getItem('dataTwo'))
+  var imageSaved = JSON.parse(localStorage.getItem('dataThree'))
+  // console.log(saver) 
+  document.getElementById('name-save').innerHTML= saver
 }
 
 
